@@ -1,0 +1,11 @@
+{
+  "name": "Remix: CareerLens AI",
+  "description": "Unlock your career potential with professional AI-driven resume insights and ATS optimization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API",
+    "AI-powered resume analysis",
+    "ATS optimization",
+    "Real-time career insights"
+  ]
+}

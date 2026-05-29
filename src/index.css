@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Geometric Palette */
+  --color-background: #FDFDFB;
+  --color-surface: #FDFDFB;
+  --color-surface-dim: #F5F5F2;
+  --color-surface-muted: #F0F0EE;
+  --color-onyx: #1A1A1A;
+  --color-stone: #E5E5E1;
+  --color-stone-dark: #D1D1CF;
+  --color-slate-gray: #888884;
+  
+  /* Semantic Alignment */
+  --color-primary: #1A1A1A;
+  --color-primary-container: #1A1A1A;
+  --color-on-primary: #FDFDFB;
+  
+  /* Custom Spacing */
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+
+  /* No shadows, just borders */
+  --shadow-none: none;
+}
+
+@layer base {
+  .dark {
+    --color-background: #0d0d0c;
+    --color-surface: #0d0d0c;
+    --color-surface-dim: #171716;
+    --color-surface-muted: #20201f;
+    --color-onyx: #FDFDFB;
+    --color-stone: #2e2e2c;
+    --color-stone-dark: #454542;
+    --color-slate-gray: #a3a39f;
+    
+    --color-primary: #FDFDFB;
+    --color-primary-container: #FDFDFB;
+    --color-on-primary: #0d0d0c;
+  }
+
+  body {
+    @apply bg-background text-onyx font-sans antialiased transition-colors duration-500 ease-in-out;
+  }
+  
+  *, *::before, *::after {
+    @apply transition-colors duration-500 ease-in-out;
+  }
+
+  h1, h2, h3 {
+    @apply tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, var(--color-stone) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-stone) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .label-caps {
+    @apply text-[10px] font-bold uppercase tracking-[0.3em] text-slate-gray;
+  }
+
+  /* Tiptap editor styles */
+  .ProseMirror {
+    outline: none;
+    min-height: 200px;
+  }
+  .ProseMirror p {
+    margin-bottom: 1em;
+  }
+  .ProseMirror ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+  }
+  .ProseMirror ol {
+    list-style-type: decimal;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+  }
+  .ProseMirror strong {
+    font-weight: 700;
+  }
+  .ProseMirror em {
+    font-style: italic;
+  }
+  .ProseMirror s {
+    text-decoration: line-through;
+  }
+}
